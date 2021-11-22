@@ -48,7 +48,7 @@
                 </div>
                 <hr class="my-3">
                 <div class="d-grid">
-                    <button class="btn btn-primary btn-block btn-login text-uppercase fw-bold">Login</button>
+                    <button class="btn btn-primary btn-block btn-login text-uppercase fw-bold" style="background-color:#191851">Login</button>
                 </div>
                 <hr class="my-3">
             </form>

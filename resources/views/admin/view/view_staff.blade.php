@@ -1,4 +1,4 @@
-@include('includes.head')
+@include('includes.adminheader')
 
 <div class="jumbotron container mt-5">
     <div class="row container">
@@ -11,9 +11,9 @@
             <div class="card">
                 <div class="card-body">
                     <ul class="nav nav-tabs mt-4">
-                        <li class="btn-block"><a href="{{ route('view_data') }}"class="btn btn-primary mb-3 btn-block active"  >Security Personnel</a></li>
-                        <li class="btn-block"><a href="{{ route('view_staff') }}"class="btn btn-primary  mb-3 btn-block"  >Office Staff</a></li>
-                        <li class="btn-block"><a href="{{ route('view_office') }}"class="btn btn-primary  mb-3 btn-block" >Office</a></li>
+                        <li class="btn-block"><a href="{{ route('view_data') }}"class="btn btn-primary mb-3 btn-block active text-dark" style="background-color:#FDB417" >Security Personnel</a></li>
+                        <li class="btn-block"><a href="{{ route('view_staff') }}"class="btn btn-primary  mb-3 btn-block text-dark" style="background-color:#FDB417"  >Office Staff</a></li>
+                        <li class="btn-block"><a href="{{ route('view_office') }}"class="btn btn-primary  mb-3 btn-block text-dark" style="background-color:#FDB417" >Office</a></li>
                     </ul>
                 </div>
             </div>

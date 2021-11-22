@@ -1,7 +1,7 @@
 @include('includes.head')
   
 </body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg" style="background-color:#191851">
         <a href="{{ route('admin') }}" class="p-3 text-white">Welcome {{ Auth::user()->name }}</a>
         <div class="navbar-nav ml-auto">
         @auth

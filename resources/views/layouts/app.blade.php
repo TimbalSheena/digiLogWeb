@@ -1,7 +1,7 @@
 @include('includes.head')
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#011a42">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#191851">
     <a href="{{ route('home') }}" class="navbar-brand ">USTP Digital Logbook</a>
         <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -17,7 +17,7 @@
             
             <form action="{{ route('logout') }}" method="post" class="nav-item nav-link" >
                 @csrf
-                <button type="submit" class="btn btn-light">Logout</button>
+                <button type="submit" class="btn" style="background-color:#191851">Logout</button>
             </form>
                 @endauth
 

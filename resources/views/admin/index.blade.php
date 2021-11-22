@@ -1,11 +1,11 @@
 @include('includes.adminheader')
 
-<div class="jumbotron container">
-   <h2 class="display-4">Manage Data</h2>
-   <div class="row">
+<div class="jumbotron container" style= "margin-top: 40px; background-color: #191851">
+   <h2 class="display-4 text-light">Manage Data</h2>
+   <div class="row" >
         <div class="col-sm-6">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body"  >
                     <h5 class="card-title">View Data</h5>
                     <p class="card-text">View Data of Security Personnel, Office Staff and Office.</p>
                     <a href="{{ route('view_data') }}"class="btn btn-primary" style="background:#FFA500;border-color:#FFA500;" >View Data</a>
@@ -23,8 +23,8 @@
         </div>
     </div>
 </div>
-<div class="jumbotron container">
-   <h2 class="display-4">Visitor</h2>
+<div class="jumbotron container" style= "background-color: #191851">
+   <h2 class="display-4 text-light">Visitor</h2>
    <div class="row">
         <div class="col-sm-6">
             <div class="card">

@@ -1,13 +1,14 @@
-@include('includes.head')
+@include('includes.adminheader')
+
  <!-- Nav pills -->
  <div class="container mt-4">
  <a href="{{ route('admin') }}" class="btn btn-default" ><span class="fas fa-arrow-left mr-2"></span >Back</a>
     <ul class="nav nav-pills justify-content-center nav-fill" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="pill" href="#home">All Visit</a>
+            <a class="nav-link active text-dark" data-toggle="pill" href="#home" >All Visit</a>
         </li>
             <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu1">Todays Visit</a>
+        <a class="nav-link" data-toggle="pill " href="#menu1">Todays Visit</a>
         </li>
     </ul>
   </div>
