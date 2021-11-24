@@ -21,11 +21,11 @@
         <div class="col-sm-8">
             <div class="card container">
                 <div class="card-body">
-                <form action="#" method="#">
+                <form method="post" action="<?php echo e(route('offices.store')); ?>">
                     <?php echo csrf_field(); ?>
                     
                     <div class="mb-3 mt-4">
-                        <input type="text" name="buidnum" id="buidnum" placeholder="Building Number" value="<?php echo e(old('buidnum')); ?>"
+                        <input type="text" name="build_num" id="build_num" placeholder="Building Number" value="<?php echo e(old('buidnum')); ?>"
                         class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg <?php $__errorArgs = ['buidnum'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -51,7 +51,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     
                     <div class="mb-3">
-                        <input type="text" name="buildname" id="buildname" placeholder="Building Name"  value="<?php echo e(old('buildname')); ?>"
+                        <input type="text" name="build_name" id="build_name" placeholder="Building Name"  value="<?php echo e(old('buildname')); ?>"
                         class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg <?php $__errorArgs = ['buildname'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -77,7 +77,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     
                     <div class="mb-3">
-                        <input type="contact" name="office" id="office" placeholder="Office" value="<?php echo e(old('office')); ?>"
+                        <input type="contact" name="office_name" id="office_name" placeholder="Office" value="<?php echo e(old('office')); ?>"
                         class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg <?php $__errorArgs = ['office'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

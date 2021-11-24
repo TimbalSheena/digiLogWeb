@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Office;
 
 class OfficeController extends Controller
 {
@@ -13,8 +14,9 @@ class OfficeController extends Controller
      */
     public function index()
     {
-        // dd(auth()->user());
-        return view('/office-staff.index');
+        $office = Office::all();
+        return view('/office-staff.index')->with('office', $office);
+
     }
 
     /**
@@ -25,6 +27,7 @@ class OfficeController extends Controller
     public function create()
     {
         //
+        return view('create');
     }
 
     /**
@@ -36,6 +39,15 @@ class OfficeController extends Controller
     public function store(Request $request)
     {
         //
+
+        $officeData = $request->validate([
+            'build_num' => 'required|numeric',
+            'build_name' => 'required|max:255',
+            'office_name' => 'required|max:255',
+        ]);
+        $office = Office::create($officeData);
+
+        return redirect('admin/reg_office')->with('completed', 'Office has been saved!');
     }
 
     /**
@@ -58,6 +70,8 @@ class OfficeController extends Controller
     public function edit($id)
     {
         //
+        $office = Office::findOrFail($id);
+        return view('edit', compact('office'));
     }
 
     /**
@@ -70,6 +84,14 @@ class OfficeController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $officeUpdateData = $request->validate([
+            'build_num' => 'required|numeric',
+            'build_name' => 'required|max:255',
+            'office_name' => 'required|max:255',
+        ]);
+        Office::whereId($id)->update($officeUpdateData);
+        return redirect('admin/reg_office')->with('completed', 'Student has been updated');
     }
 
     /**
@@ -81,5 +103,9 @@ class OfficeController extends Controller
     public function destroy($id)
     {
         //
+        $office = Office::findOrFail($id);
+        $office->delete();
+
+        return redirect('/offices')->with('completed', 'Student has been deleted');
     }
 }

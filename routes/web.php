@@ -89,8 +89,8 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/office', [OfficeController::class, 'index'])->name('office');
-Route::post('/office', [OfficeController::class, 'store']);
+//Route::get('/office', [OfficeController::class, 'index'])->name('office');
+//Route::post('/office', [OfficeController::class, 'store']);
 
 Route::get('/office-staff', [OfficeController::class, 'index'])->name('office-staff');
 Route::post('/office-staff', [OfficeController::class, 'store']);
@@ -99,3 +99,9 @@ Route::post('/office-staff', [OfficeController::class, 'store']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+///////
+
+Route::resource('/offices', OfficeController::class);
