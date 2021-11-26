@@ -18,10 +18,10 @@
                 {{-- User ID --}}
                 <div class="form-floating mb-3">
                     <label for="name" class="sr-only">User ID</label>
-                    <input type="name" name="name" id="name"  placeholder="User ID" value="{{ old('name') }}"
-                    class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-danger @enderror">
+                    <input type="text" name="username" id="name"  placeholder="Username" value="{{ old('username') }}"
+                    class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg @error('username') border-danger @enderror">
                     {{-- error message --}}
-                    @error('name')
+                    @error('username')
                         <div class="text-danger mt-2 text-sm">
                             {{ $message }}
                         </div>

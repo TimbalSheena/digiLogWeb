@@ -19,8 +19,8 @@
                 
                 <div class="form-floating mb-3">
                     <label for="name" class="sr-only">User ID</label>
-                    <input type="name" name="name" id="name"  placeholder="User ID" value="<?php echo e(old('name')); ?>"
-                    class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg <?php $__errorArgs = ['name'];
+                    <input type="text" name="username" id="name"  placeholder="Username" value="<?php echo e(old('username')); ?>"
+                    class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg <?php $__errorArgs = ['username'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -29,7 +29,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
                     
-                    <?php $__errorArgs = ['name'];
+                    <?php $__errorArgs = ['username'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

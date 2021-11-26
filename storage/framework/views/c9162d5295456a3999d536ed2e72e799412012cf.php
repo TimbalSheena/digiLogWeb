@@ -6,12 +6,18 @@
         <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                 <?php if(auth()->guard()->check()): ?>
-                <?php if(auth()->user()->user_type == "administrator"): ?>
+                    <?php
+                        $id = (string)auth()->user()->id;
+                        $check = substr($id, -5);
+                        $int_check = (int)$check;
+                        print($int_check);
+                    ?>
+                <?php if($int_check < 5000): ?> //->user_type == "administrator"
                     <a href="<?php echo e(route('register')); ?>"class="nav-item nav-link" >Register User</a>
                 <?php endif; ?>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-item nav-link" ><?php echo e(Auth::user()->name); ?></a>
+                    <a href="" class="nav-item nav-link" ><?php echo e(Auth::user()->adminName); ?></a>
                 </li>
             </ul>
             

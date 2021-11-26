@@ -14,7 +14,7 @@ class CreateAdminTable extends Migration
     public function up()
     {
         Schema::create('tbladmin', function (Blueprint $table) {
-            $table->bigIncrements('adminID')->unsigned();
+            $table->bigIncrements('id')->unsigned();
             $table->string('username');
             $table->string('adminName');
             $table->string('adminPassword');

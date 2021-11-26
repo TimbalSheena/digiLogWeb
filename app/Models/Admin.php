@@ -11,13 +11,15 @@ class Admin extends Authenticatable
 
     protected $table = 'tbladmin';
 
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'adminID','adminName','adminPassword'
+        'username','adminName','adminPassword'
     ];
 
     /**

@@ -15,13 +15,15 @@ class Office extends Authenticatable
     use Notifiable;
     protected $table = 'tbloffice';
 
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'officeID','officeName','officeBuildingNum', 'officePassword','officeStatus'
+        'username','officeName','officeBuildingNum', 'officePassword','officeStatus'
     ];
 
     /**

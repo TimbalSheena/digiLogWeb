@@ -50,8 +50,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'adminName' => ['required', 'string', 'max:255'],
-            'adminPassword' => ['required', 'string', 'min:8', 'confirmed'],
+            'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
@@ -64,8 +65,9 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Admin::create([
-            'adminName' => $data['adminName'],
-            'adminPassword' => Hash::make($data['adminPassword']),
+            'username' => $data['username'],
+            'adminName' => $data['name'],
+            'adminPassword' => Hash::make($data['password']),
         ]);
 
         // maybe make a separate registercontroller for creating admin?

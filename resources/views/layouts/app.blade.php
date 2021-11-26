@@ -6,12 +6,18 @@
         <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                 @auth
-                @if (auth()->user()->user_type == "administrator")
+                    @php
+                        $id = (string)auth()->user()->id;
+                        $check = substr($id, -5);
+                        $int_check = (int)$check;
+                        print($int_check);
+                    @endphp
+                @if ($int_check < 5000) //->user_type == "administrator"
                     <a href="{{ route('register') }}"class="nav-item nav-link" >Register User</a>
                 @endif
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-item nav-link" >{{ Auth::user()->name }}</a>
+                    <a href="" class="nav-item nav-link" >{{ Auth::user()->adminName }}</a>
                 </li>
             </ul>
             

@@ -29,33 +29,11 @@
                     </div>
                     {{-- Username --}}
                     <div class="mb-3">
-                        <label for="username" class="sr-only">Username</label>
-                        <input type="text" name="username" id="username" placeholder="Username"  value="{{ old('username') }}"
+                        <label for="name" class="sr-only">Username</label>
+                        <input type="text" name="username" id="name" placeholder="Username"  value="{{ old('username') }}"
                         class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg @error('username') border-danger @enderror">
                         {{-- error message --}}
                         @error('username')
-                            <div class="text-danger mt-2 text-sm">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-                    {{-- User type --}}
-                    <div class="mb-3">
-                        <label for="user_type" class="sr-only">User Type</label>
-                        @auth
-                            <input type="hidden" name="user_type" id="user_type" value="office-staff">                 
-                        @endauth
-                        @guest
-                            <input type="hidden" name="user_type" id="user_type" value="administrator">
-                        @endguest
-                    </div>
-                    {{-- Email --}}
-                    <div class="mb-3">
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Email"value="{{ old('email') }}"
-                        class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-danger @enderror">
-                        {{-- error message --}}
-                        @error('email')
                             <div class="text-danger mt-2 text-sm">
                                 {{ $message }}
                             </div>
