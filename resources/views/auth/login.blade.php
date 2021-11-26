@@ -15,13 +15,13 @@
             @endif
             <form action="{{ route('login') }}" method="post">
                 @csrf
-                {{-- Email --}}
+                {{-- User ID --}}
                 <div class="form-floating mb-3">
-                    <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="email"  placeholder="Email" value="{{ old('email') }}"
-                    class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-danger @enderror">
+                    <label for="name" class="sr-only">User ID</label>
+                    <input type="name" name="name" id="name"  placeholder="User ID" value="{{ old('name') }}"
+                    class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-danger @enderror">
                     {{-- error message --}}
-                    @error('email')
+                    @error('name')
                         <div class="text-danger mt-2 text-sm">
                             {{ $message }}
                         </div>

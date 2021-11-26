@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('tbladmin')->insert(array(
             array(
+                'username' => 'jradmin',
                 'adminName' => 'John R. Riley',
                 'adminPassword' => 'adminpassword',
             ),
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('tbloffice')->insert(
             array(
-                'officeID' => '003001ASO',  // bldgnum + floor + acronym
+                'username' => '003001ASO',  // bldgnum + floor + acronym
                 'officeName' => 'Admission and Scholarship Office',
                 'officeBuildingNum' => '3',
                 'officePassword' => 'asopassword', // bisan unsa lang sa karon just make it simple

@@ -15,11 +15,14 @@ class CreateAdminTable extends Migration
     {
         Schema::create('tbladmin', function (Blueprint $table) {
             $table->bigIncrements('adminID')->unsigned();
+            $table->string('username');
             $table->string('adminName');
             $table->string('adminPassword');
         });
+        $this_year = (int)date("Y");
+        $for_id = $this_year * 10000;
 
-        DB::update("ALTER TABLE tblAdmin AUTO_INCREMENT = 10000;");
+        DB::update("ALTER TABLE tbladmin AUTO_INCREMENT = $for_id;");
     }
 
     /**

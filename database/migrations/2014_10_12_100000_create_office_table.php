@@ -14,12 +14,18 @@ class CreateOfficeTable extends Migration
     public function up()
     {
         Schema::create('tbloffice', function (Blueprint $table) {
-            $table->string('officeID')->primary();
+            $table->bigIncrements('officeID')->unsigned();
+            $table->string('username');
             $table->string('officeName');
             $table->integer('officeBuildingNum');
             $table->string('officePassword');
             $table->string('officeStatus');
         });
+
+        $this_year = (int)date("Y");
+        $for_id = $this_year * 10000 + 5000;
+
+        DB::update("ALTER TABLE tbloffice AUTO_INCREMENT = $for_id;");
     }
 
     /**

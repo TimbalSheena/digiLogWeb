@@ -4,16 +4,12 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Office extends Authenticatable
+class Admin extends Authenticatable
 {
-    /*use HasFactory;
-    protected $fillable = ['build_num', 'build_name', 'office_name'];*/
-
     use Notifiable;
-    protected $table = 'tbloffice';
+
+    protected $table = 'tbladmin';
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +17,7 @@ class Office extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'officeID','officeName','officeBuildingNum', 'officePassword','officeStatus'
+        'adminID','adminName','adminPassword'
     ];
 
     /**
@@ -30,12 +26,12 @@ class Office extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'officePassword', 'remember_token',
+        'adminPassword', 'remember_token',
     ];
 
 
     public function getAuthPassword()
     {
-      return $this->officePassword;
+      return $this->adminPassword;
     }
 }

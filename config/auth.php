@@ -15,7 +15,9 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        /*'passwords' => 'users',*/
+        'passwords' => 'tbloffice',
+        'passwords' => 'tbladmin',
     ],
 
     /*
@@ -38,7 +40,9 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            /*'provider' => 'users',*/
+            'provider' => 'tbloffice',
+            'provider' => 'tbladmin',
         ],
     ],
 
@@ -60,9 +64,18 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        /*'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],*/
+        'tbloffice' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Office::class,
+        ],
+
+        'tbladmin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
 
         // 'users' => [
@@ -87,12 +100,25 @@ return [
     */
 
     'passwords' => [
-        'users' => [
+        /*'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],*/
+
+        'tbloffice' => [
+            'provider' => 'tbloffice',
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
+
+        'tbladmin' => [
+            'provider' => 'tbladmin',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
     ],
 
     /*

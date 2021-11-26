@@ -18,9 +18,9 @@
                 <?php echo csrf_field(); ?>
                 
                 <div class="form-floating mb-3">
-                    <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="email"  placeholder="Email" value="<?php echo e(old('email')); ?>"
-                    class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg <?php $__errorArgs = ['email'];
+                    <label for="name" class="sr-only">User ID</label>
+                    <input type="name" name="name" id="name"  placeholder="User ID" value="<?php echo e(old('name')); ?>"
+                    class="form-control bg-gray-100 border-2 w-full p-4 rounded-lg <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -29,7 +29,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
                     
-                    <?php $__errorArgs = ['email'];
+                    <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
